@@ -19,4 +19,4 @@ phases:
   post_build:
     commands:
       - terraform apply -auto-approve tfplan
-      - terraform destroy -auto-approve tfplan
+      - terraform destroy -auto-approve

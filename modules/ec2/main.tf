@@ -47,5 +47,5 @@ EOF
 #resource "aws_volume_attachment" "data_attach" {
  # device_name = "/dev/sdf"
   #volume_id   = aws_ebs_volume.data.id
-  3instance_id = aws_instance.app.id
+  #instance_id = aws_instance.app.id
 #}

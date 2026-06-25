@@ -35,17 +35,34 @@ EOF
   }
 }
 
-#resource "aws_ebs_volume" "data" {
-  #availability_zone = aws_instance.app.availability_zone
-  #size              = 30
+resource "aws_ebs_volume" "data_30gb" {
+  availability_zone = aws_instance.app.availability_zone
+  size              = 30
 
-  #tags = {
-    #Name = "${var.environment}-data-volume"
-  #}
-#}
+  tags = {
+    Name = "${var.environment}-30gb-volume"
+  }
+}
 
-#resource "aws_volume_attachment" "data_attach" {
- # device_name = "/dev/sdf"
-  #volume_id   = aws_ebs_volume.data.id
-  #instance_id = aws_instance.app.id
-#}
+resource "aws_volume_attachment" "attach_30gb" {
+  device_name = "/dev/sdf"
+  volume_id   = aws_ebs_volume.data_30gb.id
+  instance_id = aws_instance.app.id
+}
+
+resource "aws_ebs_volume" "data_50gb" {
+  availability_zone = aws_instance.app.availability_zone
+  size              = 50
+
+  tags = {
+    Name = "${var.environment}-50gb-volume"
+  }
+}
+
+resource "aws_volume_attachment" "attach_50gb" {
+  device_name = "/dev/sdg"
+  volume_id   = aws_ebs_volume.data_50gb.id
+  instance_id = aws_instance.app.id
+}
+
+

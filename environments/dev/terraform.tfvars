@@ -1,0 +1,5 @@
+environment       = "dev"
+aws_region        = "us-east-1"
+ami_id            = "ami-0152204c1a187337c"
+instance_type     = "t3.medium"
+db_instance_class = "db.t3.micro"

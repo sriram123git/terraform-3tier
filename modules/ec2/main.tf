@@ -35,7 +35,7 @@ EOF
   }
 }
 
-resource "aws_ebs_volume" "data_30gb" {
+/*resource "aws_ebs_volume" "data_30gb" {
   availability_zone = aws_instance.app.availability_zone
   size              = 30
 
@@ -63,6 +63,6 @@ resource "aws_volume_attachment" "attach_50gb" {
   device_name = "/dev/sdg"
   volume_id   = aws_ebs_volume.data_50gb.id
   instance_id = aws_instance.app.id
-}
+}*/
 
 
